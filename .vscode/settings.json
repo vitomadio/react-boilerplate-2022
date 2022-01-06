@@ -1,5 +1,5 @@
 {
-    "[javascript, javascriptreact, typescript, typescriptreact]": {
+    "[javascript, javascriptreact, typescript, typescriptreact, json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnType": true,
         "editor.formatOnPaste": true,
