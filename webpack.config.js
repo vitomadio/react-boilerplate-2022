@@ -12,7 +12,8 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"],
     },
     devServer: {
-        static: path.join(__dirname, "src")
+        static: path.join(__dirname, "src"),
+        historyApiFallback: true, // Prevent cannot Get on when refreshes the page
     },
     module: {
         rules: [

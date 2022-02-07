@@ -8,10 +8,9 @@ interface IAppProps {}
 const App: React.FC<IAppProps> = ({}:IAppProps) => {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} >
-                    <Route path="about" element={<About />} />
-                </Route>
+            <Routes location={location}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </BrowserRouter>
     )
