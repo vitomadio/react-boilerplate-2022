@@ -21,6 +21,9 @@
         "baseUrl": "src",
         "jsx": "react-jsx",
         "sourceMap": true,
+        "rootDir": "./src",
+        "removeComments": true,
+        "noEmitOnError": true,
     },
     "include": [
         "src"
