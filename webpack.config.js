@@ -5,16 +5,18 @@ module.exports = {
     entry: path.join(__dirname, "src", "index.tsx"),
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "index.bundle.js"
+        filename: "[name].bundle.js",
+        publicPath: '/'
     },
     mode: process.env.NODE_ENV || "development",
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
     devServer: {
-        static: path.join(__dirname, "src"),
+        static: path.join(__dirname, "public"),
         historyApiFallback: true, // Prevent cannot Get on when refreshes the page
     },
+    devtool: 'eval-source-map',
     module: {
         rules: [
             { 
@@ -25,7 +27,7 @@ module.exports = {
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
-                use: ["ts-loader"],
+                use: ["ts-loader", "source-map-loader"],
             },
             {
                 test: /\.(css|scss)$/,
@@ -39,7 +41,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "src", "index.html"),
+            template: path.join(__dirname, "public", "index.html"),
         }),
     ],
 };
